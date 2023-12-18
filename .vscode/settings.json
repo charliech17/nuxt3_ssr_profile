@@ -1,0 +1,8 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#09276F",
+        "titleBar.activeBackground": "#0D379B",
+        "titleBar.activeForeground": "#F8FAFE"
+    },
+    "css.customData": ["./.vscode/css-data.json"]
+}

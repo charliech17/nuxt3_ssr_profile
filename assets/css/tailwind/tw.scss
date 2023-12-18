@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$dark-bg: #404040;
+
+@layer base {
+    body{
+        @apply dark:bg-[#404040];
+    }
+}
