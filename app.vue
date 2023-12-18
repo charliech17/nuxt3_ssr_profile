@@ -7,8 +7,9 @@
       :active-action-icon="Moon"
       :inactive-action-icon="Sunny"
       :style="{
-        '--el-switch-on-color': colors.$switchDark, 
-        '--el-switch-off-color': colors.$switchLight}"
+          '--el-switch-on-color': colors.$switchDark, 
+          '--el-switch-off-color': colors.$switchLight
+        }"
     />
     <div class="primary-bg">aasdfasdfasf</div>
   </div>
