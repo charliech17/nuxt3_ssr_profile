@@ -1,0 +1,16 @@
+$dark-bg: #404040;
+$primary: blue;
+$secondary: #e5e5e5;
+$tertiary: "";
+
+// 深色、淺色模式
+$switchDark: #737373;
+$switchLight:#e5e5e5;
+
+$primary-light: black;
+
+:export {
+    #{"$primary"}: $primary;
+    #{"$switchDark"}: $switchDark;
+    #{"$switchLight"}: $switchLight;
+}

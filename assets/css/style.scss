@@ -1,8 +1,12 @@
-@use "~/assets/css/global-style/color" as color;
+@use "~/assets/css/global-style/color.module.scss" as color;
 @use "~/assets/css/tailwind/tw.scss" as *;
 
 .primary-bg {
-    background-color: $dark-bg;
+    background-color: color.$dark-bg;
+}
+
+.test-module {
+    background-color: color.$primary;
 }
 
 html{

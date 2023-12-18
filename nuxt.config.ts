@@ -4,7 +4,8 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt', 
     '@vueuse/nuxt', 
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
+    '@element-plus/nuxt'
   ],
   tailwindcss: {
     cssPath: false
@@ -14,6 +15,9 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  elementPlus: { 
+    icon: false
   },
   css: [
     '~/assets/css/style.scss'

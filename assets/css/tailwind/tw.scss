@@ -1,11 +1,10 @@
+@use "~/assets/css/global-style/color.module.scss" as color;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-$dark-bg: #404040;
-
 @layer base {
     body{
-        @apply dark:bg-[#404040];
+        @apply #{"dark:bg-[" + color.$dark-bg + "]"};
     }
 }
