@@ -12,6 +12,7 @@
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.7",
     "@nuxt/devtools": "latest",
+    "@nuxtjs/i18n": "^8.0.0-rc.11",
     "@nuxtjs/tailwindcss": "^6.10.1",
     "@vueuse/core": "^10.7.0",
     "@vueuse/nuxt": "^10.7.0",
