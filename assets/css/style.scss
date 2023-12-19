@@ -12,6 +12,12 @@
 html{
     color: color.$secondary;
     font-size: 10px;
+    &.light {
+        color: color.$primary-light;
+    }
+    @media (prefers-color-scheme: light) {
+        color: color.$primary-light;
+    }
 }
 
 body {
