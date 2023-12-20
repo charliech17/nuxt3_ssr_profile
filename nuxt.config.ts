@@ -7,8 +7,8 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt', 
     '@vueuse/nuxt', 
-    "@nuxtjs/tailwindcss",
     '@element-plus/nuxt',
+    "@nuxtjs/tailwindcss",
     '@nuxtjs/i18n',
   ],
   app: {
@@ -25,6 +25,10 @@ export default defineNuxtConfig({
       ],
     }
   },
+  elementPlus: { 
+    icon: false,
+    themes: ['dark']
+  },
   tailwindcss: {
     cssPath: false
   },
@@ -33,9 +37,6 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
-  },
-  elementPlus: { 
-    icon: false
   },
   i18n: {
     langDir: 'locales',
@@ -56,9 +57,4 @@ export default defineNuxtConfig({
   css: [
     '~/assets/css/style.scss'
   ],
-  compilerOptions: {
-    types: [
-      "@nuxtjs/i18n",
-    ]
-  }
 })

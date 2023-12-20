@@ -1,35 +1,32 @@
 <script lang="ts" setup>
-    import { Moon, Sunny } from '@element-plus/icons-vue'
-    import colors from "@/assets/css/global-style/color.module.scss"
+    import { getRandomInt } from "@/utils/baseUtils"
 
-    const isDark = useDark({
-        valueDark: 'dark',
-        valueLight: 'light',
-    })
-    const toggleDark = useToggle(isDark)
+    const loadingImgs = ref([
+        "/index/soon.gif",
+        "/index/wall.gif",
+        "/index/work-in-progress.gif",
+        "/index/loading.gif",
+    ])
 </script>
 
 <template>
     <div class="p-8">
-        <h1 class="text-center text-blue-700 dark:text-white">{{ $t('homeTitle') }}</h1>
-        <div class="mt-8 text-center">
+        <h1 class="text-center">{{ $t('homeTitle') }}</h1>
+        <div class="mt-5 text-center">
             <el-image 
-                style="width: 50%; height: 50%; border-radius: 50%;" 
-                src="https://source.unsplash.com/random/500x500?sig=1" 
-                fit="contain" 
-            />
+                style="width: 150px; height: 150px; border-radius: 50%;" 
+                :src="`https://source.unsplash.com/random? user/500x500?sig=${getRandomInt(1,6)}`" 
+                fit="cover" 
+            >
+                <template #placeholder>
+                    <el-image 
+                        style="border-radius: 0%;"
+                        :src="loadingImgs[getRandomInt(0,loadingImgs.length)]" 
+                        fit="contain" 
+                    />
+                </template>
+            </el-image>
         </div>
-        <p class="mt-8 text-justify">{{ $t('introduction') }}</p>
-        <el-switch
-            :model-value="isDark"
-            @input="() => toggleDark()"
-            :active-action-icon="Moon"
-            :inactive-action-icon="Sunny"
-            :style="{
-                '--el-switch-on-color': colors.$switchDark, 
-                '--el-switch-off-color': colors.$switchLight
-                }"
-        />
-        <div class="primary-bg">aasdfasdfasf</div>
+        <p class="mt-5 text-justify">{{ $t('introduction') }}</p>
     </div>
 </template>
