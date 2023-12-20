@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
+      title: `Josh的個人網站`,
       meta: [
         {
           name: "title",
@@ -21,6 +22,13 @@ export default defineNuxtConfig({
         {
           name: "description",
           content: "我是Josh，從事前端工作兩年，對技術學習和教學很有興趣，歡迎看看我的作品集!還有可以玩玩看這個網頁的各種功能~"
+        }
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/index/profile_logo.png'
         }
       ],
     }

@@ -27,13 +27,12 @@ const mySites = ref(["portfolio","resume"])
         mode="horizontal"
         :ellipsis="false"
     >
-        <el-menu-item index="0">
-            <img
-                style="width: 100px"
-                src="/index/profile_logo.png"
-                alt="josh profile logo"
-            />
-        </el-menu-item>
+        <img
+            class="ml-2"
+            style="width: 100px"
+            src="/index/profile_logo.png"
+            alt="josh profile logo"
+        />
         <div class="flex-grow" />
         <el-icon class="mr-4" :size="20" @click="isShowMenu = !isShowMenu; triggerMenu='settings'">
             <Setting />
