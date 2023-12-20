@@ -55,7 +55,7 @@ const mySites = ref(["portfolio","resume"])
         </div>
         <div v-if="triggerMenu === 'settings'">
             <h3 class="text-center mt-4">{{ $t("websiteConfigTitle") }}</h3>
-            <div class="flex justify-between">
+            <div class="flex justify-between mt-4">
                 <h4>{{$t("colorSwitchTitle")}}</h4>
                 <el-switch
                     :model-value="isDark"
@@ -90,7 +90,8 @@ const mySites = ref(["portfolio","resume"])
             <ol>
                 <li 
                     v-for="site in mySites"
-                    class="flex justify-between items-center p-4 mt-2 border-solid border-b-2 border-sky-500"
+                    class="flex justify-between items-center p-4 mt-2 border-solid border-b-2"
+                    :style="{'borderColor': colors.$primary}"
                 >
                     <h4>{{ $t(site) }}</h4>
                     <el-icon :size="20"><Right /></el-icon>

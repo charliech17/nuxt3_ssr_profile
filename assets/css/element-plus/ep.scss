@@ -1,0 +1,8 @@
+@use "~/assets/css/global-style/color.module.scss" as colors;
+
+html.dark{
+    .el-drawer{
+        --el-drawer-bg-color: #{colors.$drawerDark};
+        --el-dialog-bg-color: #{colors.$drawerDark};
+    }
+} 

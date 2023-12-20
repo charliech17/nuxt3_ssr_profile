@@ -1,7 +1,8 @@
 $dark-bg: #404040;
-$primary: blue;
+$primary: #0ea5e9;
 $secondary: #e5e5e5;
 $tertiary: "";
+$drawerDark: #262626;
 
 // 深色、淺色模式
 $switchDark: #737373;
@@ -13,4 +14,12 @@ $primary-light: black;
     #{"$primary"}: $primary;
     #{"$switchDark"}: $switchDark;
     #{"$switchLight"}: $switchLight;
+}
+
+.jh-primaryBg {
+    background-color: $primary;
+}
+
+.jh-colorPrimary{
+    color: $primary;
 }
