@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-    import { getRandomInt,getInnerWidth } from "@/utils/baseUtils"
+    import { getRandomInt, getInnerWidth, getImgSrc, getI18nTranlate } from "@/utils/baseUtils"
     import colors from "@/assets/css/global-style/color.module.scss"
 
     const loadingImgs = ref([
@@ -17,19 +17,16 @@
     const spinnerIdx = ref(getRandomInt(0,spinnerColor.value.length))
     const animateRef = ref<HTMLElement|null>(null)
     const workExperience = ref([
-        {startTime:'',status:'stillWorking',colorActive:colors.$primary,learningList:['aaa','bbb','ccc'],company:{nameId:"companyPollex",img:""}},
-        {startTime:'2023/09/10',status:'stillWorking',colorActive: colors.$primary,learningList:[],company:{nameId:"companyCodingBar",img:""}},
-        {startTime:'2020/09/10',status:'',colorActive: '',learningList:[],company:{nameId:"chruchChanghua",img:""}},
+        {startTime:'2023/09/10',status:'stillWorking',colorActive: colors.$primary,learningList:"codingBarLearning",company:{nameId:"companyCodingBar",img:getImgSrc("/index/cdBar.png")}},
+        {startTime:'2022/02/15',status:'stillWorking',colorActive:colors.$primary,learningList:"pollexWorkLearning",company:{nameId:"companyPollex",img: getImgSrc("/index/pollex.png")}},
+        {startTime:'2020/09/10',status:'',colorActive: '',learningList:'chruchLearning',company:{nameId:"chruchChanghua",img:""}},
     ])
 
     function setRandAnimate() {
         animateRef.value!.classList.remove("animate-move")
         setTimeout(()=> {
             const bgList = ["/cool.png","/rocket.png","/sun.png","/code.png","/money.png"]
-            const bgUrl = new URL(
-                '/index' + bgList[getRandomInt(0,bgList.length)],
-                import.meta.url
-            ).href
+            const bgUrl = getImgSrc('/index' + bgList[getRandomInt(0,bgList.length)])
             
             const animateBg = `url(${bgUrl})`
             document.documentElement.style.setProperty('--animate-bg', animateBg)
@@ -39,6 +36,10 @@
             document.documentElement.style.setProperty('--animate-top-end', topEnd)
             animateRef.value!.classList.add("animate-move")
         },1000)
+    }
+
+    function addWorkStatus(status: string) {
+        return status ? ` (${getI18nTranlate('stillWorking')})` : ''
     }
 
     onMounted(()=> {
@@ -100,14 +101,17 @@
                     ${item.startTime 
                         ? new Date(item.startTime).toISOString().split('T')[0]
                         : new Date().toISOString().split('T')[0]
-                    }`" 
+                    }` + addWorkStatus(item.status)" 
                 :color="item.colorActive"
                 placement="top"
             >
-                <el-card>
+                <div class="text-center mt-4">
+                    <el-image style="height: 50px; width: auto;" :src="item.company.img"></el-image>
+                </div>
+                <el-card class="mt-3">
                     <h4>{{ $t(item.company.nameId) }}</h4>
                     <ol class="list-inside list-decimal">
-                        <li v-for="learnitme in item.learningList">{{ learnitme }}</li>
+                        <li class="mt-3" v-for="learnitme in $tm(item.learningList)">{{ $rt(learnitme) }}</li>
                     </ol>
                 </el-card>
             </el-timeline-item>

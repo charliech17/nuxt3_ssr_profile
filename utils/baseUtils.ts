@@ -7,3 +7,11 @@ export function getRandomInt(min:number, max:number) {
 export function getInnerWidth() {
     return window.innerWidth
 }
+
+export function getImgSrc(staticPath:string) {
+    return new URL(staticPath,import.meta.url).href
+}
+
+export function getI18nTranlate(translateId: string) {
+    return useNuxtApp().$i18n.t(translateId)
+}

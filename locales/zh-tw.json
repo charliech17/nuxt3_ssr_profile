@@ -14,5 +14,22 @@
     "companyPollex": "博樂資訊",
     "companyCodingBar": "瑞比科技",
     "chruchChanghua": "彰化市召會",
-    "stillWorking": "仍在職"
+    "stillWorking": "仍在職",
+    "pollexWorkLearning": [
+        "使用nuxt2 進行專案開發，期間上線至少8個保險服務功能。",
+        "設計前端共用元件，串接restful api。",
+        "維護既有系統 (全站色系更換，全站更名作業，nuxt弱掃升級)。",
+        "調校不同平台間產生的功能或版面問題，使之都能正常運作。(包括ios、android、電腦)",
+        "協助團隊解決技術問題，撰寫自動化程式提升團隊工作效率。",
+        "敏捷式開發、團隊溝通、客戶溝通 (約15人團隊)。"
+    ],
+    "codingBarLearning": [
+        "python、c語言基礎教學。",
+        "幫助學生考取csfc及apcs證照。",
+        "累積學生人數共兩人。",
+        "累積教學時數: 20小時。"
+    ],
+    "chruchLearning":[
+        "待續。"
+    ]
 }
