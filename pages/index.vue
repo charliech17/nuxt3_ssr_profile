@@ -14,15 +14,36 @@
         {front_bg:"linear-gradient(#00ccff,#d500f9)",cover_bg:"#0e1538"},
     ])
     const spinnerIdx = ref(getRandomInt(0,spinnerColor.value.length))
+    const animateRef = ref<HTMLElement|null>(null)
+
+    function setRandAnimate() {
+        animateRef.value!.classList.remove("animate-move")
+        setTimeout(()=> {
+            const bgList = ["/cloudy.png","/rocket.png","/sun.png","/code.png","/money.png"]
+            const bgUrl = new URL(
+                '/index' + bgList[getRandomInt(0,bgList.length)],
+                import.meta.url
+            ).href
+            
+            const animateBg = `url(${bgUrl})`
+            document.documentElement.style.setProperty('--animate-bg', animateBg)
+
+            const sign = getRandomInt(1,11) <= 5 ? -1 : 1
+            const topEnd = `${getRandomInt(0,51)* sign}px`
+            document.documentElement.style.setProperty('--animate-top-end', topEnd)
+            animateRef.value!.classList.add("animate-move")
+        },1000)
+    }
 
     onMounted(()=> {
         const [maxImgSize,minImgSize] = [getInnerWidth() * 0.9, getInnerWidth() * 0.6]
         imgSize.value = getRandomInt(minImgSize,maxImgSize)
+        setRandAnimate()
     })
 </script>
 
 <template>
-    <div class="p-8">
+    <div class="p-8 relative">
         <h1 class="text-center jh-colorPrimary">{{ $t('homeTitle') }}</h1>
         <div class="mt-10 text-center">
             <el-image 
@@ -45,6 +66,9 @@
             </el-image>
         </div>
         <!-- //todo css 寫法優化 -->
+        <div class="relative z-1">
+            <div class="absolute" @animationend="setRandAnimate" ref="animateRef"/>
+        </div>
         <div 
             class="intro mt-10 text-justify"
         >
@@ -110,6 +134,31 @@
 .light{
     .intro {
         color: colors.$secondary;
+    }
+}
+
+.animate-move {
+    animation: horizMove 4s ease-in;
+    
+    width: 50px;
+    height: 50px;
+    background-image: var(--animate-bg);//"/index/cloudy.png"
+    background-position: center;
+    background-size: contain;
+    z-index: 3;
+
+    @keyframes horizMove{
+        0% {
+            left: -5%;
+            top: 5px;
+            opacity: 1;
+        }
+
+        100% {
+            left: 15%;
+            top: var(--animate-top-end);
+            opacity: 0.2;
+        }
     }
 }
 </style>
