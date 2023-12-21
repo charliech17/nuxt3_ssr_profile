@@ -1,5 +1,6 @@
 <script lang="ts" setup>
     import { getRandomInt,getInnerWidth } from "@/utils/baseUtils"
+    import colors from "@/assets/css/global-style/color.module.scss"
 
     const loadingImgs = ref([
         "/index/soon.gif",
@@ -15,11 +16,16 @@
     ])
     const spinnerIdx = ref(getRandomInt(0,spinnerColor.value.length))
     const animateRef = ref<HTMLElement|null>(null)
+    const workExperience = ref([
+        {startTime:'',status:'stillWorking',colorActive:colors.$primary,learningList:['aaa','bbb','ccc'],company:{nameId:"companyPollex",img:""}},
+        {startTime:'2023/09/10',status:'stillWorking',colorActive: colors.$primary,learningList:[],company:{nameId:"companyCodingBar",img:""}},
+        {startTime:'2020/09/10',status:'',colorActive: '',learningList:[],company:{nameId:"chruchChanghua",img:""}},
+    ])
 
     function setRandAnimate() {
         animateRef.value!.classList.remove("animate-move")
         setTimeout(()=> {
-            const bgList = ["/cloudy.png","/rocket.png","/sun.png","/code.png","/money.png"]
+            const bgList = ["/cool.png","/rocket.png","/sun.png","/code.png","/money.png"]
             const bgUrl = new URL(
                 '/index' + bgList[getRandomInt(0,bgList.length)],
                 import.meta.url
@@ -86,6 +92,26 @@
                 class="cover_bg"
             />
         </div>
+        <h2 class="text-center mt-10">{{ $t("workingExpTitle") }}</h2>
+        <el-timeline class="mt-4">
+            <el-timeline-item 
+                v-for="item in workExperience"
+                :timestamp="`
+                    ${item.startTime 
+                        ? new Date(item.startTime).toISOString().split('T')[0]
+                        : new Date().toISOString().split('T')[0]
+                    }`" 
+                :color="item.colorActive"
+                placement="top"
+            >
+                <el-card>
+                    <h4>{{ $t(item.company.nameId) }}</h4>
+                    <ol class="list-inside list-decimal">
+                        <li v-for="learnitme in item.learningList">{{ learnitme }}</li>
+                    </ol>
+                </el-card>
+            </el-timeline-item>
+        </el-timeline>
     </div>
 </template>
 

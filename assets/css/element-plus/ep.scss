@@ -5,4 +5,8 @@ html.dark{
         --el-drawer-bg-color: #{colors.$drawerDark};
         --el-dialog-bg-color: #{colors.$drawerDark};
     }
+    .el-timeline {
+        --el-border-color-light: #{colors.$emptyGray};
+        --el-border-color-light: #{colors.$emptyGray};
+    }
 } 
