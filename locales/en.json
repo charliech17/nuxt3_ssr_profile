@@ -13,12 +13,12 @@
     "workingExpTitle": "Working Experience",
     "companyPollex": "Pollex",
     "companyCodingBar": "CodingBar",
-    "chruchChanghua": "chruch in Changhua",
-    "stillWorking": "still at working",
+    "chruchChanghua": "Chruch in Changhua",
+    "stillWorking": "still at work",
     "pollexWorkLearning": [
-        "Using nuxt2 for porject development. Having launched at least eight insurance service related functions.",
+        "Use nuxt2 for porject development. Having launched at least eight insurance service related functions.",
         "Design frontend common components and using restful api.",
-        "Maintain existing systems (includes site-wide color system replacement and fix nuxt vulnerabilities).",
+        "Maintain existing systems (includes site-wide color system replacement and upgrade nuxt2 version to fix vulnerabilities).",
         "Adjust functional or layout issues arising between different platforms so that they can all operate normally. (Including ios, android, computer).",
         "Assist the team to solve technical problems and write automated programs to improve team work efficiency.",
         "Agile development, team communication, customer communication (team of about 15 people)."
@@ -26,10 +26,11 @@
     "codingBarLearning": [
         "Basic teaching of python and c language.",
         "Help students obtain CSFC and APCS certificates.",
-        "The cumulative number of students is two.",
+        "The cumulative number of students is 2.",
         "Cumulative teaching hours: 20 hours."
     ],
     "chruchLearning":[
-        "to be continue."
+        "Planning and prepare activies for about twenty teenagers",
+        "Repairs things and commuicate with manufacturers"
     ]
 }

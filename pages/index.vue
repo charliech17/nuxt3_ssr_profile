@@ -73,7 +73,7 @@
             </el-image>
         </div>
         <!-- //todo css 寫法優化 -->
-        <div class="relative z-1">
+        <div class="relative z-1 max-w-[300px] mx-auto">
             <div class="absolute" @animationend="setRandAnimate" ref="animateRef"/>
         </div>
         <div 
