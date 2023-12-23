@@ -15,6 +15,9 @@
     "companyCodingBar": "CodingBar",
     "chruchChanghua": "Chruch in Changhua",
     "stillWorking": "still at work",
+    "pollexRole": "Frontend engineer",
+    "codingBarRole": "Lecturer",
+    "chruchRole": "Full time ministry",
     "pollexWorkLearning": [
         "Use nuxt2 for porject development. Having launched at least eight insurance service related functions.",
         "Design frontend common components and using restful api.",

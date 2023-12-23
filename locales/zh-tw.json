@@ -15,6 +15,9 @@
     "companyCodingBar": "瑞比科技",
     "chruchChanghua": "彰化市召會",
     "stillWorking": "仍在職",
+    "pollexRole": "前端工程師",
+    "codingBarRole": "講師",
+    "chruchRole": "全職服事者",
     "pollexWorkLearning": [
         "使用nuxt2 進行專案開發，期間上線至少8個保險服務功能。",
         "設計前端共用元件，串接restful api。",
