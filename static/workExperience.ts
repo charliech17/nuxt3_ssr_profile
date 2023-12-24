@@ -1,8 +1,9 @@
 import colors from "@/assets/css/global-style/color.module.scss"
 
+export const earliestWorkDate = "2021/01/01"
 export const workExpData = [
     {
-        startTime: '2023/09/10',
+        startTime: '至今',
         status: 'stillWorking',
         colorActive: colors.$primary,
         learningList: "codingBarLearning",
@@ -14,7 +15,7 @@ export const workExpData = [
         }
     },
     {
-        startTime: '2022/02/15',
+        startTime: '2023/09/10',
         status: 'stillWorking', 
         colorActive: colors.$primary, 
         learningList: "pollexWorkLearning", 
@@ -26,14 +27,14 @@ export const workExpData = [
         }
     },
     { 
-        startTime: '2020/09/10', 
+        startTime: '2022/02/15', 
         status: '', 
         colorActive: '', 
         learningList: 'chruchLearning', 
         illustrateIcon: getImgSrc("/index/tree-of-life.png"),
         company: { 
             nameId: "chruchChanghua", 
-            img: "", 
+            img: getImgSrc("/index/chruch.png"), 
             role: "chruchRole" 
         } 
     },

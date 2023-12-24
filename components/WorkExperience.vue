@@ -1,11 +1,12 @@
 <script setup lang="ts">
     import { getImgSrc, getI18nTranlate } from "@/utils/baseUtils"
     import colors from "@/assets/css/global-style/color.module.scss"
-    import  { workExpData } from "@/static/workExperience"
+    import  { workExpData,earliestWorkDate } from "@/static/workExperience"
 
+    const earliestExpDate = ref(earliestWorkDate)
     const workExperience = ref(workExpData)
-    function addWorkStatus(status: string) {
-        return status ? ` (${getI18nTranlate('stillWorking')})` : ''
+    function addWorkStatus(status: string,companyName: string) {
+        return status ? ` (${getI18nTranlate(companyName) + " " + getI18nTranlate('stillWorking')})` : ''
     }
 </script>
 
@@ -16,10 +17,7 @@
             <el-timeline-item 
                 v-for="item in workExperience"
                 :timestamp="`
-                    ${item.startTime 
-                        ? new Date(item.startTime).toISOString().split('T')[0]
-                        : new Date().toISOString().split('T')[0]
-                    }` + addWorkStatus(item.status)" 
+                    ${item.startTime}` + addWorkStatus(item.status,item.company.nameId)" 
                 :color="item.colorActive"
                 placement="top"
             >
@@ -41,6 +39,7 @@
                     </ol>
                 </el-card>
             </el-timeline-item>
+            <el-timeline-item :timestamp="earliestExpDate" placement="top"/>
         </el-timeline>
     </div>
 </template>
