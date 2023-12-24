@@ -17,7 +17,7 @@ const languageOptions = [
 ]
 const { locale } = useI18n()
 
-const mySites = ref(["portfolio","resume"])
+const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}])
 
 </script>
 
@@ -27,17 +27,18 @@ const mySites = ref(["portfolio","resume"])
         mode="horizontal"
         :ellipsis="false"
     >
-        <img
-            class="ml-2"
+        <el-image
+            @click="navigateTo('/')"
+            class="ml-2 cursor-pointer"
             style="width: 100px"
             src="/index/profile_logo.png"
             alt="josh profile logo"
         />
         <div class="flex-grow" />
-        <el-icon class="mr-4" :size="20" @click="isShowMenu = !isShowMenu; triggerMenu='settings'">
+        <el-icon class="mr-4 cursor-pointer" :size="20" @click="isShowMenu = !isShowMenu; triggerMenu='settings'">
             <Setting />
         </el-icon>
-        <el-icon :size="20" @click="isShowMenu = !isShowMenu;triggerMenu='navigator';">
+        <el-icon class="cursor-pointer" :size="20" @click="isShowMenu = !isShowMenu;triggerMenu='navigator';">
             <More />
         </el-icon>
         <div class="mr-4"></div>
@@ -49,7 +50,7 @@ const mySites = ref(["portfolio","resume"])
         size="100%"
     >
         <div class="text-right">
-            <el-icon :size="20" @click="isShowMenu = !isShowMenu; triggerMenu=''">
+            <el-icon class="cursor-pointer" :size="20" @click="isShowMenu = !isShowMenu; triggerMenu=''">
                 <Close />
             </el-icon>
         </div>
@@ -92,8 +93,9 @@ const mySites = ref(["portfolio","resume"])
                     v-for="site in mySites"
                     class="flex justify-between items-center p-4 mt-2 border-solid border-b-2 cursor-pointer"
                     :style="{'borderColor': colors.$primary}"
+                    @click="navigateTo(site.link);isShowMenu=false;"
                 >
-                    <h4>{{ $t(site) }}</h4>
+                    <h4>{{ $t(site.id) }}</h4>
                     <el-icon :size="20"><Right /></el-icon>
                 </li>
             </ol>

@@ -2,6 +2,7 @@
     import { getRandomInt, getInnerWidth } from "@/utils/baseUtils"
     import WorkExperience from "@/components/WorkExperience.vue";
     import IntroPart from "@/components/IntroPart.vue";
+    import Skills from "@/components/Skills.vue"
 
     const loadingImgs = ref([
         "/index/soon.gif",
@@ -41,6 +42,7 @@
             </el-image>
         </div>
         <IntroPart class="mt-10"/>
+        <!-- <Skills class="mt-10"/> -->
         <WorkExperience class="mt-10"/>
     </div>
 </template>
