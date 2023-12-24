@@ -90,7 +90,7 @@ const mySites = ref(["portfolio","resume"])
             <ol>
                 <li 
                     v-for="site in mySites"
-                    class="flex justify-between items-center p-4 mt-2 border-solid border-b-2"
+                    class="flex justify-between items-center p-4 mt-2 border-solid border-b-2 cursor-pointer"
                     :style="{'borderColor': colors.$primary}"
                 >
                     <h4>{{ $t(site) }}</h4>

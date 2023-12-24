@@ -27,7 +27,7 @@
                     <el-image style="height: 50px; width: auto;" :src="item.company.img"></el-image>
                 </div>
                 <div class="relative">
-                    <el-image class="absolute -right-3 top-1/2" style="height: 40px;width: auto;" :src="item.illustrateIcon"></el-image>
+                    <el-image class="absolute -right-3 top-1/2" style="height: 40px;width: 40px;" :src="item.illustrateIcon"></el-image>
                 </div>
                 <el-card class="mt-4">
                     <div class="flex items-center">
