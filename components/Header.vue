@@ -15,7 +15,7 @@ const languageOptions = [
     {value: 'en',label: 'english'},
     {value: 'zh-tw',label: 'chineseTradition'},
 ]
-const { locale } = useI18n()
+const { locale,setLocale } = useI18n()
 
 const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}])
 
@@ -72,7 +72,8 @@ const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}]
             <div class="flex justify-between mt-4">
                 <h4>{{$t("languageSwitchTitle")}}</h4>
                 <el-select
-                    v-model="locale"
+                    :model-value="locale"
+                    @change="(newLocale) => setLocale(newLocale)"
                     :placeholder="$t('selectPlaceholder')"
                 >
                     <el-option
