@@ -4,6 +4,7 @@ export const earliestWorkDate = "2021/01/01"
 export const workExpData = [
     {
         startTime: 'untilNow',
+        isStringTime: true,
         status: 'stillWorking',
         colorActive: colors.$primary,
         learningList: "codingBarLearning",

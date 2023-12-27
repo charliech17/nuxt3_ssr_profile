@@ -18,7 +18,9 @@
             <el-timeline-item 
                 v-for="item in workExperience"
                 :timestamp="`
-                    ${t(item.startTime)}` + addWorkStatus(item.status,item.company.nameId)" 
+                    ${item.isStringTime ? t(item.startTime): item.startTime}` 
+                    + addWorkStatus(item.status,item.company.nameId)
+                " 
                 :color="item.colorActive"
                 placement="top"
             >
