@@ -3,7 +3,7 @@ import colors from "@/assets/css/global-style/color.module.scss"
 export const earliestWorkDate = "2021/01/01"
 export const workExpData = [
     {
-        startTime: '至今',
+        startTime: 'untilNow',
         status: 'stillWorking',
         colorActive: colors.$primary,
         learningList: "codingBarLearning",

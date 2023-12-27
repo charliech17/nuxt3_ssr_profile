@@ -1,8 +1,9 @@
 <script setup lang="ts">
-    import { getImgSrc, getI18nTranlate } from "@/utils/baseUtils"
+    import { getI18nTranlate } from "@/utils/baseUtils"
     import colors from "@/assets/css/global-style/color.module.scss"
     import  { workExpData,earliestWorkDate } from "@/static/workExperience"
 
+    const { t } = useI18n()
     const earliestExpDate = ref(earliestWorkDate)
     const workExperience = ref(workExpData)
     function addWorkStatus(status: string,companyName: string) {
@@ -17,7 +18,7 @@
             <el-timeline-item 
                 v-for="item in workExperience"
                 :timestamp="`
-                    ${item.startTime}` + addWorkStatus(item.status,item.company.nameId)" 
+                    ${t(item.startTime)}` + addWorkStatus(item.status,item.company.nameId)" 
                 :color="item.colorActive"
                 placement="top"
             >
