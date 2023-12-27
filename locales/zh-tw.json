@@ -35,5 +35,82 @@
     "chruchLearning":[
         "20位青少年之活動籌備及規劃。",
         "教會各樣修繕及採購接洽。"
+    ],
+    "protfolioTitle":"我的作品集",
+    "portFoliosList":[
+        {
+            "title":"Nuxt3 個人網頁",
+            "feature":{
+                "subtitle":"特色:",
+                "details":[
+                    "使用nuxt3的ssr功能，優化SEO及第一屏載入速度。",
+                    "使用i18n，支援中英切換。",
+                    "網站亮暗色系切換。"
+                ]
+            },
+            "technical":{
+                "subtitle":"技術",
+                "details":["nuxt3、element-plus、vueUse、i18n、tailwind"]
+            },
+            "link":{
+                "subtitle":"前往",
+                "linkTxt": "Link(本網站首頁)",
+                "linkTo": "/",
+                "isExternal": "N"
+            },
+            "imgSearchKey": "profile happy"
+        },
+        {
+            "title":"Nuxt3 多人即時視訊平台",
+            "feature":{
+                "subtitle":"特色:",
+                "details":[
+                    "使用p2p連線，達到多人視訊效果。",
+                    "使用websocket，即時更新會議室人數異動資訊。",
+                    "使用otp兩階段驗證使用者登入。",
+                    "首頁手刻垂直橫向滑動及跑馬燈功能。"
+                ]
+            },
+            "technical":{
+                "subtitle":"技術",
+                "details":[
+                    "前端技術: nuxt3、pinia、vuetify、tailwind、scss",
+                    "後端技術: node.js (express.js)、restful api、socket.io",
+                    "其他: peer to peer、websocket、restful api、mongodb、nodemailer、firebase"
+                ]
+            },
+            "link":{
+                "subtitle":"前往",
+                "linkTxt": "Link",
+                "linkTo": "https://web-chatapp-nuxt3.netlify.app/",
+                "isExternal": "Y"
+            },
+            "imgSearchKey": "meetings simple"
+        },
+        {
+            "title":"React 工程/仿ios 計算機",
+            "feature":{
+                "subtitle":"特色:",
+                "details":[
+                    "使用vite創建react專案。",
+                    "使用functional components。",
+                    "使用react hook: useState、useRef。",
+                    "透過React.memo避免子元件不必要重新render。"
+                ]
+            },
+            "technical":{
+                "subtitle":"技術",
+                "details":[
+                    "react、react hooks"
+                ]
+            },
+            "link":{
+                "subtitle":"前往",
+                "linkTxt": "Link",
+                "linkTo": "https://react-ios-engineering-calculator.netlify.app/",
+                "isExternal": "Y"
+            },
+            "imgSearchKey": "calculator"
+        }
     ]
 }
