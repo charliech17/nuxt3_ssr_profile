@@ -16,6 +16,7 @@ const languageOptions = [
     {value: 'zh-tw',label: 'chineseTradition'},
 ]
 const { locale,setLocale } = useI18n()
+const localePath = useLocalePath()
 
 const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}])
 
@@ -28,7 +29,7 @@ const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}]
         :ellipsis="false"
     >
         <el-image
-            @click="navigateTo('/')"
+            @click="navigateTo(localePath('/'))"
             class="ml-2 cursor-pointer"
             style="width: 100px"
             src="/index/profile_logo.png"
@@ -94,7 +95,7 @@ const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}]
                     v-for="site in mySites"
                     class="flex justify-between items-center p-4 mt-2 border-solid border-b-2 cursor-pointer"
                     :style="{'borderColor': colors.$primary}"
-                    @click="navigateTo(site.link);isShowMenu=false;"
+                    @click="navigateTo(localePath(site.link));isShowMenu=false;"
                 >
                     <h4>{{ $t(site.id) }}</h4>
                     <el-icon :size="20"><Right /></el-icon>
