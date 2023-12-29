@@ -1,24 +1,14 @@
 <script setup lang="ts">
+import { useDarkStore,useI18nStore } from "@/stores/baseStore"
 import { Close , Moon, More, Right , Setting, Sunny } from '@element-plus/icons-vue'
 import colors from "@/assets/css/global-style/color.module.scss"
 
 const isShowMenu = ref(false)
 const triggerMenu = ref<"settings"|"navigator"|"">('')
-
-const isDark = useDark({
-        valueDark: 'dark',
-        valueLight: 'light',
-    })
-const toggleDark = useToggle(isDark)
-
-const languageOptions = [
-    {value: 'en',label: 'english'},
-    {value: 'zh-tw',label: 'chineseTradition'},
-]
-const { locale,setLocale } = useI18n()
-const localePath = useLocalePath()
-
 const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}])
+
+const i18nStore = useI18nStore()
+const darkStore = useDarkStore()
 
 </script>
 
@@ -29,7 +19,7 @@ const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}]
         :ellipsis="false"
     >
         <el-image
-            @click="navigateTo(localePath('/'))"
+            @click="navigateTo(useI18nStore().localePath('/'))"
             class="ml-2 cursor-pointer"
             style="width: 100px"
             src="/index/profile_logo.png"
@@ -60,8 +50,8 @@ const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}]
             <div class="flex justify-between mt-4">
                 <h4>{{$t("colorSwitchTitle")}}</h4>
                 <el-switch
-                    :model-value="isDark"
-                    @input="() => toggleDark()"
+                    :model-value="darkStore.isDark"
+                    @input="() => darkStore.toggleDark()"
                     :active-action-icon="Moon"
                     :inactive-action-icon="Sunny"
                     :style="{
@@ -73,12 +63,12 @@ const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}]
             <div class="flex justify-between mt-4">
                 <h4>{{$t("languageSwitchTitle")}}</h4>
                 <el-select
-                    :model-value="locale"
-                    @change="(newLocale) => setLocale(newLocale)"
+                    :model-value="i18nStore.locale"
+                    @change="(newLocale) => i18nStore.setLocale(newLocale)"
                     :placeholder="$t('selectPlaceholder')"
                 >
                     <el-option
-                        v-for="item in languageOptions"
+                        v-for="item in i18nStore.languageOptions"
                         :effect="'dark'"
                         :size="'small'"
                         :key="item.value"
@@ -95,7 +85,7 @@ const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}]
                     v-for="site in mySites"
                     class="flex justify-between items-center p-4 mt-2 border-solid border-b-2 cursor-pointer"
                     :style="{'borderColor': colors.$primary}"
-                    @click="navigateTo(localePath(site.link));isShowMenu=false;"
+                    @click="navigateTo(i18nStore.localePath(site.link));isShowMenu=false;"
                 >
                     <h4>{{ $t(site.id) }}</h4>
                     <el-icon :size="20"><Right /></el-icon>
