@@ -8,7 +8,7 @@ const portFoliosList: any = ref(tm("portFoliosList"))
 <template>
     <div class="p-8">
         <h1 class="text-center jh-colorPrimary">{{ $t("protfolioTitle")}}</h1>
-        <div class="mt-5">
+        <div class="mt-10">
             <el-card 
                 v-for="info ,index in portFoliosList"
                 :key="index"

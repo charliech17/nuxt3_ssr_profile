@@ -37,5 +37,81 @@
         "Planning and prepare activies for about twenty teenagers",
         "Repairs things and commuicate with manufacturers"
     ],
-    "protfolioTitle":"My portfolios"
+    "protfolioTitle":"My portfolios",
+    "portFoliosList":[
+        {
+            "title":"Nuxt3 profile",
+            "feature":{
+                "subtitle":"feature",
+                "details":[
+                    "Use nuxt3 ssr feature to optimize SEO and to reduce first screen loading speed.",
+                    "Use i18n dependency for switching language(chinese and english).",
+                    "You can also switch dark mode or light mode in this website."
+                ]
+            },
+            "technical":{
+                "subtitle":"technical",
+                "details":["nuxt3、element-plus、vueUse、i18n、tailwind"]
+            },
+            "link":{
+                "subtitle":"preview",
+                "linkTxt": "Link (home page)",
+                "linkTo": "/",
+                "isExternal": "N"
+            },
+            "imgSearchKey": "profile happy"
+        },
+        {
+            "title":"Nuxt3 real-time video chat",
+            "feature":{
+                "subtitle":"feature",
+                "details":[
+                    "Use p2p connection to bring about real-time video chat function",
+                    "Use websocket connection to update info in each meeting room in real-time",
+                    "Use Two-factor authentication for login.",
+                    "Hand-engraved carousel in home page."
+                ]
+            },
+            "technical":{
+                "subtitle":"technical",
+                "details":[
+                    "frontend: nuxt3、pinia、vuetify、tailwind、scss",
+                    "backend: node.js (express.js)、restful api、socket.io",
+                    "others: peer to peer、websocket、restful api、mongodb、nodemailer、firebase"
+                ]
+            },
+            "link":{
+                "subtitle":"preview",
+                "linkTxt": "Link",
+                "linkTo": "https://web-chatapp-nuxt3.netlify.app/",
+                "isExternal": "Y"
+            },
+            "imgSearchKey": "meetings simple"
+        },
+        {
+            "title":"React calculator",
+            "feature":{
+                "subtitle":"feature",
+                "details":[
+                    "Use vite to build up this project.",
+                    "Use react's functional components.",
+                    "Use react hook: useState、useRef.",
+                    "Use React.memo to prevent unnecessary re-render."
+                ]
+            },
+            "technical":{
+                "subtitle":"technical",
+                "details":[
+                    "react、react hooks"
+                ]
+            },
+            "link":{
+                "subtitle":"preview",
+                "linkTxt": "Link",
+                "linkTo": "https://react-ios-engineering-calculator.netlify.app/",
+                "isExternal": "Y"
+            },
+            "imgSearchKey": "calculator"
+        }
+    ]
 }
