@@ -1,4 +1,4 @@
-export const useMobileStore = defineStore('mobileStore', () => {
+export const useDeviceStore = defineStore('deviceStore', () => {
     const breakpoints = useBreakpoints({
         tablet: 768,
         laptop: 1024,

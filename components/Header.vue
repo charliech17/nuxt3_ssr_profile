@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useI18nStore } from "@/stores/baseStore"
+import { useI18nStore,useDeviceStore } from "@/stores/baseStore"
 import DarkLightSwitch from "@/components/base/DarkLightSwitch.vue";
 import LanguageSelect from "@/components/base/LanguageSelect.vue";
 import { Close , More, Right , Setting } from '@element-plus/icons-vue'
@@ -10,12 +10,13 @@ const triggerMenu = ref<"settings"|"navigator"|"">('')
 const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}])
 
 const i18nStore = useI18nStore()
+const deviceStore = useDeviceStore()
 
 </script>
 
 <template>
     <el-menu
-        class="items-center"
+        class="items-center justify-between"
         mode="horizontal"
         :ellipsis="false"
     >
@@ -26,14 +27,23 @@ const i18nStore = useI18nStore()
             src="/index/profile_logo.png"
             alt="josh profile logo"
         />
-        <div class="flex-grow" />
-        <el-icon class="mr-4 cursor-pointer" :size="20" @click="isShowMenu = !isShowMenu; triggerMenu='settings'">
-            <Setting />
-        </el-icon>
-        <el-icon class="cursor-pointer" :size="20" @click="isShowMenu = !isShowMenu;triggerMenu='navigator';">
-            <More />
-        </el-icon>
-        <div class="mr-4"></div>
+        <div class="mr-4">
+            <div v-if="deviceStore.isMobile">
+                <el-icon class="mr-4 cursor-pointer" :size="20" @click="isShowMenu = !isShowMenu; triggerMenu='settings'">
+                    <Setting />
+                </el-icon>
+                <el-icon class="cursor-pointer" :size="20" @click="isShowMenu = !isShowMenu;triggerMenu='navigator';">
+                    <More />
+                </el-icon>
+            </div>
+            <div 
+                v-else
+                class="flex items-center"
+            >
+                <LanguageSelect useType="dropdown" class="mr-3"/>
+                <DarkLightSwitch />
+            </div>
+        </div>
     </el-menu>
     <el-drawer
         v-model="isShowMenu"
@@ -54,7 +64,7 @@ const i18nStore = useI18nStore()
             </div>
             <div class="flex justify-between mt-4">
                 <h4>{{$t("languageSwitchTitle")}}</h4>
-                <LanguageSelect/>
+                <LanguageSelect useType="select"/>
             </div>
         </div>
         <div v-else-if="triggerMenu === 'navigator'">
