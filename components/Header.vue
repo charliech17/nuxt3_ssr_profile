@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { useDarkStore,useI18nStore } from "@/stores/baseStore"
-import { Close , Moon, More, Right , Setting, Sunny } from '@element-plus/icons-vue'
+import { useI18nStore } from "@/stores/baseStore"
+import DarkLightSwitch from "@/components/base/DarkLightSwitch.vue";
+import LanguageSelect from "@/components/base/LanguageSelect.vue";
+import { Close , More, Right , Setting } from '@element-plus/icons-vue'
 import colors from "@/assets/css/global-style/color.module.scss"
 
 const isShowMenu = ref(false)
@@ -8,7 +10,6 @@ const triggerMenu = ref<"settings"|"navigator"|"">('')
 const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}])
 
 const i18nStore = useI18nStore()
-const darkStore = useDarkStore()
 
 </script>
 
@@ -49,33 +50,11 @@ const darkStore = useDarkStore()
             <h3 class="text-center mt-4">{{ $t("websiteConfigTitle") }}</h3>
             <div class="flex justify-between mt-4">
                 <h4>{{$t("colorSwitchTitle")}}</h4>
-                <el-switch
-                    :model-value="darkStore.isDark"
-                    @input="() => darkStore.toggleDark()"
-                    :active-action-icon="Moon"
-                    :inactive-action-icon="Sunny"
-                    :style="{
-                        '--el-switch-on-color': colors.$switchDark, 
-                        '--el-switch-off-color': colors.$switchLight
-                    }"
-                />
+                <DarkLightSwitch/>
             </div>
             <div class="flex justify-between mt-4">
                 <h4>{{$t("languageSwitchTitle")}}</h4>
-                <el-select
-                    :model-value="i18nStore.locale"
-                    @change="(newLocale) => i18nStore.setLocale(newLocale)"
-                    :placeholder="$t('selectPlaceholder')"
-                >
-                    <el-option
-                        v-for="item in i18nStore.languageOptions"
-                        :effect="'dark'"
-                        :size="'small'"
-                        :key="item.value"
-                        :label="$t(item.label)"
-                        :value="item.value"
-                    />
-                </el-select>
+                <LanguageSelect/>
             </div>
         </div>
         <div v-else-if="triggerMenu === 'navigator'">
