@@ -25,7 +25,11 @@ const portFoliosList: any = ref(tm("portFoliosList"))
                             :src="`https://source.unsplash.com/random? ${rt(info['imgSearchKey'])}/500x500?sig=${getRandomInt(1,6)}`"
                             style="max-height: 250px;max-width: 300px;"
                             fit="cover"
-                        />
+                        >
+                        <template #placeholder>
+                            <div style="max-height: 250px;max-width: 300px;">Loading...</div>
+                        </template>
+                        </el-image>
                     </div>
                     <div class="mt-4 md:m-0">
                         <h3 class="jh-colorPrimary font-bold">{{ $rt(info["feature"]["subtitle"]) }}</h3>
