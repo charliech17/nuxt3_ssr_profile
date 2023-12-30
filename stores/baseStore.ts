@@ -32,6 +32,7 @@ export const useI18nStore = defineStore('i18Store',()=>{
 
 type tgMenuType = "settings"|"navigator"|""
 export const useHeaderStore = defineStore('headerStore',()=>{
+    const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}])
     const isShowMenu = ref(false)
     const triggerMenu = ref<tgMenuType>('')
     
@@ -47,5 +48,5 @@ export const useHeaderStore = defineStore('headerStore',()=>{
         triggerMenu.value = newTrigger
     }
 
-    return { isShowMenu,toggleShowMenu,triggerMenu,setTriggerMenu }
+    return { isShowMenu,toggleShowMenu,triggerMenu,setTriggerMenu,mySites}
 })

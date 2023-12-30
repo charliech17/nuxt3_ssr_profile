@@ -22,10 +22,33 @@ $primary-light: black;
     background-color: $primary;
 }
 
+.jh-secondaryBg {
+    background-color: $secondary;
+}
+
+.jh-drawerDark {
+    background-color: $drawerDark;
+}
+
 .jh-colorPrimary{
     color: $primary;
 }
 
 .jh-colorSecondary{
     color: $secondary;
+}
+
+
+.jh-itemHover{
+    &:hover{
+        background-color: $tertiary;
+    }
+}
+
+.dark{
+    .jh-itemHover{
+        &:hover{
+            background-color: $drawerDark;
+        }
+    }
 }

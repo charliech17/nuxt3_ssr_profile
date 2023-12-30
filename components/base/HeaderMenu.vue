@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { useDeviceStore,useHeaderStore } from "@/stores/baseStore"
+import { useDeviceStore,useHeaderStore,useI18nStore } from "@/stores/baseStore"
 import DarkLightSwitch from "@/components/base/DarkLightSwitch.vue";
 import LanguageSelect from "@/components/base/LanguageSelect.vue";
 import { More , Setting } from '@element-plus/icons-vue'
 
 const deviceStore = useDeviceStore()
 const headerStore = useHeaderStore()
+const i18nStore = useI18nStore()
 
 </script>
 
@@ -43,6 +44,13 @@ const headerStore = useHeaderStore()
                 v-else
                 class="flex items-center"
             >
+                <li 
+                    class="mr-3 p-1 rounded cursor-pointer jh-itemHover"
+                    v-for="site in headerStore.mySites"
+                    @click="navigateTo(i18nStore.localePath(site.link));headerStore.toggleShowMenu('isShow',false)"
+                >
+                    {{ $t(site.id) }}
+                </li>
                 <LanguageSelect useType="dropdown" class="mr-3"/>
                 <DarkLightSwitch />
             </div>

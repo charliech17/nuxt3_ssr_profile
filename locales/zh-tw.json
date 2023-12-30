@@ -43,7 +43,7 @@
         {
             "title":"Nuxt3 個人網頁",
             "feature":{
-                "subtitle":"特色:",
+                "subtitle":"特色",
                 "details":[
                     "使用nuxt3的ssr功能，優化SEO及第一屏載入速度。",
                     "使用i18n，支援中英切換。",
@@ -65,7 +65,7 @@
         {
             "title":"Nuxt3 多人即時視訊平台",
             "feature":{
-                "subtitle":"特色:",
+                "subtitle":"特色",
                 "details":[
                     "使用p2p連線，達到多人視訊效果。",
                     "使用websocket，即時更新會議室人數異動資訊。",
@@ -92,7 +92,7 @@
         {
             "title":"React 工程/仿ios 計算機",
             "feature":{
-                "subtitle":"特色:",
+                "subtitle":"特色",
                 "details":[
                     "使用vite創建react專案。",
                     "使用functional components。",

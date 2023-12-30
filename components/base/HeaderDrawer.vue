@@ -7,7 +7,6 @@
     
     const headerStore = useHeaderStore()
     const i18nStore = useI18nStore()
-    const mySites = ref([{id:"portfolio",link:"/protfolios"},{id:"resume",link:"/"}])
 </script>
 
 <template>
@@ -37,7 +36,7 @@
             <h3 class="text-center mt-4">{{$t("navigatorTitle")}}</h3>
             <ol>
                 <li 
-                    v-for="site in mySites"
+                    v-for="site in headerStore.mySites"
                     class="flex justify-between items-center p-4 mt-2 border-solid border-b-2 cursor-pointer"
                     :style="{'borderColor': colors.$primary}"
                     @click="navigateTo(i18nStore.localePath(site.link));headerStore.toggleShowMenu('isShow',false)"
