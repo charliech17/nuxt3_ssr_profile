@@ -41,7 +41,11 @@
                     :style="{'borderColor': colors.$primary}"
                     @click="navigateTo(i18nStore.localePath(site.link));headerStore.toggleShowMenu('isShow',false)"
                 >
-                    <h4>{{ $t(site.id) }}</h4>
+                    <h4
+                        :class="{
+                            'jh-colorSecondary':i18nStore.localePath(site.link) === useRoute().path
+                        }"
+                    >{{ $t(site.id) }}</h4>
                     <el-icon :size="20"><Right /></el-icon>
                 </li>
             </ol>
