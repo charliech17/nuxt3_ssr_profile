@@ -45,6 +45,7 @@ const i18nStore = useI18nStore()
                 class="flex items-center"
             >
                 <li 
+                    :class="{'jh-colorSecondary':i18nStore.localePath(site.link) === useRoute().path}"
                     class="mr-3 p-1 rounded cursor-pointer jh-itemHover"
                     v-for="site in headerStore.mySites"
                     @click="navigateTo(i18nStore.localePath(site.link));headerStore.toggleShowMenu('isShow',false)"
