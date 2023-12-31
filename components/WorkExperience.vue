@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <div>
+    <div class="max-w-[800px] mx-auto">
         <h2 class="text-center">{{ $t("workingExpTitle") }}</h2>
         <el-timeline class="mt-4">
             <el-timeline-item 
