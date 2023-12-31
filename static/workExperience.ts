@@ -35,7 +35,7 @@ export const workExpData = [
         illustrateIcon: getImgSrc("/index/tree-of-life.png"),
         company: { 
             nameId: "chruchChanghua", 
-            img: getImgSrc("/index/chruch.png"), 
+            img: '', 
             role: "chruchRole" 
         } 
     },
