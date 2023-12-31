@@ -14,15 +14,18 @@
 </script>
 
 <template>
-    <div>
-        <h1 class="text-center jh-colorPrimary">{{ $t('homeTitle') }}</h1>
+    <div class="p-5 rounded-lg max-w-[768px] mx-auto md:flex md:justify-around md:items-center cs-outerWrapper">
+        <div>
+            <h1 class="text-center md:text-left jh-colorPrimary">{{ $t('homeTitle') }}</h1>
+            <p class="text-center md:text-left mt-3">{{ $t("homeSubTitle").split(' ').join(" | ") }}</p>
+        </div>
         <div class="mt-10 text-center">
             <el-image 
                 style="max-height: 300px;max-width: 400px;"
                 :style="{
                     width: `${imgSize}px`,
                     height: `${imgSize}px`,
-                    borderRadius: `${getRandomInt(0,51)}%`
+                    borderRadius: `${getRandomInt(0,40)}%`
                 }"
                 :src="`https://source.unsplash.com/random? user computer/500x500?sig=${getRandomInt(1,6)}`" 
                 fit="cover" 
@@ -38,3 +41,22 @@
         </div>
     </div>
 </template>
+
+<style lang="scss" scoped>
+@use "~/assets/css/global-style/color.module.scss" as colors;
+.cs-outerWrapper{
+    @media (min-width:768px) {
+        background-color: colors.$drawerDark;
+        box-shadow: var(--el-box-shadow-light);
+    }
+}
+
+.light{
+    .cs-outerWrapper{
+        @media (min-width:768px) {
+            background-color: colors.$light-bg;
+            box-shadow: var(--el-box-shadow-light);
+        }
+    }
+}
+</style>

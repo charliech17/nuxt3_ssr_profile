@@ -1,4 +1,5 @@
 $dark-bg: #404040;
+$light-bg: #ffffff;
 $primary: #0ea5e9;
 $secondary: #fdba74;
 $tertiary: #e5e5e5;
@@ -26,9 +27,6 @@ $primary-light: black;
     background-color: $secondary;
 }
 
-.jh-drawerDark {
-    background-color: $drawerDark;
-}
 
 .jh-colorPrimary{
     color: $primary;
@@ -38,6 +36,9 @@ $primary-light: black;
     color: $secondary;
 }
 
+.jh-colorTertiary{
+    color: $tertiary;
+}
 
 .jh-itemHover{
     &:hover{
