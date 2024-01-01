@@ -53,3 +53,19 @@ $primary-light: black;
         }
     }
 }
+
+.jh-cardStyle{
+    @media (min-width:768px) {
+        background-color: $drawerDark;
+        box-shadow: var(--el-box-shadow-light);
+    }
+}
+
+.light{
+    .jh-cardStyle{
+        @media (min-width:768px) {
+            background-color: $light-bg;
+            box-shadow: var(--el-box-shadow-light);
+        }
+    }
+}

@@ -12,6 +12,27 @@
     "navigatorTitle": "Navigator to...",
     "portfolio": "Portfolios",
     "resume": "Resume",
+    "basicInformationTitle":"Personal Information",
+    "basicInformation": [
+        {
+            "id": "aboutMe",
+            "subTitle": "about me",
+            "details":[
+                {"innerTitle":"current","info":"Pollex (frontend-developer), CodingBar(lecturer)"},
+                {"innerTitle":"interest","info":"play video games, investment stocking, listen to music, eat delicious food."},
+                {"innerTitle":"other","info":" graduate from National Changhua University of Education, current residence in Taipei, self-study program."}
+            ]
+        },
+        {
+            "id": "tool",
+            "subTitle": "technique",
+            "details":[
+                {"innerTitle":"frontend","info":"nuxt3, vue3, nuxt2, vue2, angular, react, typescript, scss, element-plus, vuetify, element-ui"},
+                {"innerTitle":"backend","info":"node.js, django"},
+                {"innerTitle":"other","info":"git, websocket, mySQL, postgresSQL, mogodb"}
+            ]
+        }
+    ],
     "workingExpTitle": "Working Experience",
     "companyPollex": "Pollex",
     "companyCodingBar": "CodingBar",

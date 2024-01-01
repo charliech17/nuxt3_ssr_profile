@@ -14,7 +14,7 @@
 </script>
 
 <template>
-    <div class="p-5 rounded-lg max-w-[768px] mx-auto md:flex md:justify-around md:items-center cs-outerWrapper">
+    <div class="p-5 rounded-lg max-w-[768px] mx-auto md:flex md:justify-around md:items-center jh-cardStyle">
         <div>
             <h1 class="text-center md:text-left jh-colorPrimary">{{ $t('homeTitle') }}</h1>
             <p class="text-center md:text-left mt-3">{{ $t("homeSubTitle").split(' ').join(" | ") }}</p>
@@ -41,22 +41,3 @@
         </div>
     </div>
 </template>
-
-<style lang="scss" scoped>
-@use "~/assets/css/global-style/color.module.scss" as colors;
-.cs-outerWrapper{
-    @media (min-width:768px) {
-        background-color: colors.$drawerDark;
-        box-shadow: var(--el-box-shadow-light);
-    }
-}
-
-.light{
-    .cs-outerWrapper{
-        @media (min-width:768px) {
-            background-color: colors.$light-bg;
-            box-shadow: var(--el-box-shadow-light);
-        }
-    }
-}
-</style>

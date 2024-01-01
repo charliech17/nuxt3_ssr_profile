@@ -12,6 +12,27 @@
     "navigatorTitle": "前往",
     "portfolio": "作品集",
     "resume": "履歷",
+    "basicInformationTitle":"基本資料",
+    "basicInformation": [
+        {
+            "id": "aboutMe",
+            "subTitle": "關於我",
+            "details":[
+                {"innerTitle":"目前工作","info":"博樂資訊 (前端工程師)、瑞比科技(兼職講師)"},
+                {"innerTitle":"我的興趣","info":"打電動、股票、聽音樂、吃飯"},
+                {"innerTitle":"其他資訊","info":"畢業於彰師大光電研究所、自學程式、現居台北市"}
+            ]
+        },
+        {
+            "id": "tool",
+            "subTitle": "擅長工具",
+            "details":[
+                {"innerTitle":"前端","info":"nuxt3、vue3、nuxt2、vue2、angular、react、typescript、scss、element-plus、vuetify、element ui"},
+                {"innerTitle":"後端","info":"node.js、django"},
+                {"innerTitle":"其他","info":"git、websocket、mySQL、postgresSQL、mogodb"}
+            ]
+        }
+    ],
     "workingExpTitle": "工作經歷",
     "companyPollex": "博樂資訊",
     "companyCodingBar": "瑞比科技",
