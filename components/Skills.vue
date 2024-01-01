@@ -14,7 +14,7 @@
             <div class="text-center mt-4">
                 <el-avatar
                     v-if="rt(info.isAvatar) === 'Y'"
-                    style="height: 200px; width: auto;"
+                    style="height: 200px; width: 200px;"
                     :src="rt(info.previewImg)"
                 />
                 <el-image 
