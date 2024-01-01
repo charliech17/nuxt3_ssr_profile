@@ -8,13 +8,13 @@
     ])
     const imgSize = ref(0)
     onMounted(()=> {
-        const [maxImgSize,minImgSize] = [getInnerWidth() * 0.9, getInnerWidth() * 0.6]
+        const [maxImgSize,minImgSize] = [getInnerWidth() * 0.8, getInnerWidth() * 0.6]
         imgSize.value = getRandomInt(minImgSize,maxImgSize)
     })
 </script>
 
 <template>
-    <div class="p-5 rounded-lg max-w-[768px] mx-auto md:flex md:justify-around md:items-center jh-cardStyle">
+    <div class="md:p-5 rounded-lg max-w-[768px] mx-auto md:flex md:justify-around md:items-center jh-cardStyle">
         <div>
             <h1 class="text-center md:text-left jh-colorPrimary">{{ $t('homeTitle') }}</h1>
             <p class="text-center md:text-left mt-3">{{ $t("homeSubTitle").split(' ').join(" | ") }}</p>
