@@ -17,6 +17,8 @@
         {
             "id": "aboutMe",
             "subTitle": "about me",
+            "previewImg": "/index/me.png",
+            "isAvatar": "Y",
             "details":[
                 {"innerTitle":"current","info":"Pollex (frontend-developer), CodingBar(lecturer)"},
                 {"innerTitle":"interest","info":"play video games, investment stocking, listen to music, eat delicious food."},
@@ -26,6 +28,8 @@
         {
             "id": "tool",
             "subTitle": "technique",
+            "previewImg": "/index/tool.png",
+            "isAvatar": "N",
             "details":[
                 {"innerTitle":"frontend","info":"nuxt3, vue3, nuxt2, vue2, angular, react, typescript, scss, element-plus, vuetify, element-ui"},
                 {"innerTitle":"backend","info":"node.js, django"},

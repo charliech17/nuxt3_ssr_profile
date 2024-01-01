@@ -17,6 +17,8 @@
         {
             "id": "aboutMe",
             "subTitle": "關於我",
+            "previewImg": "/index/me.png",
+            "isAvatar": "Y",
             "details":[
                 {"innerTitle":"目前工作","info":"博樂資訊 (前端工程師)、瑞比科技(兼職講師)"},
                 {"innerTitle":"我的興趣","info":"打電動、股票、聽音樂、吃飯"},
@@ -26,6 +28,8 @@
         {
             "id": "tool",
             "subTitle": "擅長工具",
+            "previewImg": "/index/tool.png",
+            "isAvatar": "N",
             "details":[
                 {"innerTitle":"前端","info":"nuxt3、vue3、nuxt2、vue2、angular、react、typescript、scss、element-plus、vuetify、element ui"},
                 {"innerTitle":"後端","info":"node.js、django"},
