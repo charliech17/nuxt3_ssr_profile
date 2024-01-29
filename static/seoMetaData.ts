@@ -5,7 +5,7 @@ export const indexSEOMeta = {
     ogTitle: 'Josh個人網站-首頁',
     description: '歡迎來到我的網站',
     ogDescription: '歡迎來到我的網站',
-    ogImage: getOgImgPath('/index/rocket.png'),
+    ogImage: getImgSrc('/index/rocket.png'),
     ogImageWidth: 500,
     ogImageHeight: 500
 }
@@ -15,7 +15,7 @@ export const profileSEOMeta = {
     ogTitle: 'Josh個人網站-作品集',
     description: '我的作品集',
     ogDescription: '我的作品集',
-    ogImage: getOgImgPath('/index/cool.png'),
+    ogImage: getImgSrc('/index/cool.png'),
     ogImageWidth: 500,
     ogImageHeight: 500
 }
