@@ -4,6 +4,8 @@ export const indexSEOMeta = {
     description: '歡迎來到我的網站',
     ogDescription: '歡迎來到我的網站',
     ogImage: '/index/rocket.png',
+    ogImageWidth: 512,
+    ogImageHeight: 512
 }
 
 export const profileSEOMeta = {
@@ -12,4 +14,6 @@ export const profileSEOMeta = {
     description: '我的作品集',
     ogDescription: '我的作品集',
     ogImage: '/index/cool.png',
+    ogImageWidth: 512,
+    ogImageHeight: 512
 }
