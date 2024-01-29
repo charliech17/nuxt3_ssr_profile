@@ -1,5 +1,3 @@
-import { getImgSrc } from "@/utils/baseUtils";
-
 export const indexSEOMeta = {
     title: 'Josh個人網站-首頁',
     ogTitle: 'Josh個人網站-首頁',
