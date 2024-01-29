@@ -1,8 +1,11 @@
 <script lang="ts" setup>
     import HomeFirst from "@/components/HomeFirst.vue";
     import IntroPart from "@/components/IntroPart.vue";
-    import Skills from "@/components/Skills.vue"
+    import Skills from "@/components/Skills.vue";
     import WorkExperience from "@/components/WorkExperience.vue";
+    import { indexSEOMeta } from '@/static/seoMetaData';
+
+    useSeoMeta(indexSEOMeta);
 </script>
 
 <template>

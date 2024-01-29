@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { getRandomInt } from "@/utils/baseUtils"
+import { profileSEOMeta } from '@/static/seoMetaData';
 
 const { tm,rt } = useI18n()
 const portFoliosList: any = ref(tm("portFoliosList"))
+
+useSeoMeta(profileSEOMeta);
 </script>
 
 <template>
