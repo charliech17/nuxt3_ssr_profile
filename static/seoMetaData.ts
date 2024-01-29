@@ -5,7 +5,7 @@ export const indexSEOMeta = {
     ogTitle: 'Josh個人網站-首頁',
     description: '歡迎來到我的網站',
     ogDescription: '歡迎來到我的網站',
-    ogImage: getImgSrc('/index/rocket.png'),
+    ogImage: '/index/rocket.png',
     ogImageWidth: 500,
     ogImageHeight: 500
 }
@@ -15,11 +15,7 @@ export const profileSEOMeta = {
     ogTitle: 'Josh個人網站-作品集',
     description: '我的作品集',
     ogDescription: '我的作品集',
-    ogImage: getImgSrc('/index/cool.png'),
+    ogImage: '/index/cool.png',
     ogImageWidth: 500,
     ogImageHeight: 500
-}
-
-function getOgImgPath(imgPath: string) {
-    return 'https://nuxt3-ssr-profile.netlify.app' + useRoute().path + imgPath
 }
