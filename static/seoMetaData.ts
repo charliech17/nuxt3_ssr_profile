@@ -21,7 +21,5 @@ export const profileSEOMeta = {
 }
 
 function getOgImgPath(imgPath: string) {
-    const protocol = useRequestURL().protocol;
-    const host = useRequestURL().host;
-    return protocol  + "//" + host + imgPath
+    return 'https://nuxt3-ssr-profile.netlify.app' + useRoute().path + imgPath
 }
