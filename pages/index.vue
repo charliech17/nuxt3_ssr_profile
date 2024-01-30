@@ -5,7 +5,7 @@
     import WorkExperience from "@/components/WorkExperience.vue";
     import { indexSEOMeta } from '@/static/seoMetaData';
 
-    useSeoMeta(indexSEOMeta);
+    useServerSeoMeta(indexSEOMeta);
 </script>
 
 <template>
