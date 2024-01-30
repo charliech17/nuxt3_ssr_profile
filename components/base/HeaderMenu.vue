@@ -2,6 +2,7 @@
 import { useDeviceStore,useHeaderStore,useI18nStore } from "@/stores/baseStore"
 import DarkLightSwitch from "@/components/base/DarkLightSwitch.vue";
 import LanguageSelect from "@/components/base/LanguageSelect.vue";
+import WebMoreList from "@/components/base/WebMoreList.vue";
 import { More , Setting } from '@element-plus/icons-vue'
 
 const deviceStore = useDeviceStore()
@@ -53,7 +54,8 @@ const i18nStore = useI18nStore()
                     {{ $t(site.id) }}
                 </li>
                 <LanguageSelect useType="dropdown" class="mr-3"/>
-                <DarkLightSwitch />
+                <DarkLightSwitch class="mr-3"/>
+                <WebMoreList />
             </div>
         </div>
     </el-menu>

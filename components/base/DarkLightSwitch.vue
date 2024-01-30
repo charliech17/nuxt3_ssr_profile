@@ -6,16 +6,18 @@ const darkStore = useDarkStore()
 </script>
 
 <template>
-    <client-only>
-        <el-switch
-            :model-value="darkStore.isDark"
-            @input="() => darkStore.toggleDark()"
-            :active-action-icon="Moon"
-            :inactive-action-icon="Sunny"
-            :style="{
-                '--el-switch-on-color': colors.$switchDark, 
-                '--el-switch-off-color': colors.$switchLight
-            }"
-        />
-    </client-only>
+    <div>
+        <client-only>
+            <el-switch
+                :model-value="darkStore.isDark"
+                @input="() => darkStore.toggleDark()"
+                :active-action-icon="Moon"
+                :inactive-action-icon="Sunny"
+                :style="{
+                    '--el-switch-on-color': colors.$switchDark, 
+                    '--el-switch-off-color': colors.$switchLight
+                }"
+            />
+        </client-only>
+    </div>
 </template>
